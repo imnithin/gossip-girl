@@ -8,6 +8,7 @@ Set-Up:
 * Clone the project, run: bundle install, bundle exec rake db:create
 
 * Start the Servers bundle exec rackup private_pub.ru -s thin -E production and rails s
+  RAILS_ENV=production bundle exec thin -C config/private_pub.yml start 
 
 * NoSql - MongoDB
 
