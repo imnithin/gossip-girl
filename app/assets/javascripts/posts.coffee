@@ -5,4 +5,4 @@
 
 jQuery ->
   PrivatePub.subscribe "/posts", (data, channel) ->    
-    $('#notice').hide();
+    $('#notification').append("<a href=/posts/"+data.post._id.$oid+">"+data.post.name+"</a>"+"</br>");
