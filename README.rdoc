@@ -1,0 +1,94 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Clone the project, run rake db:create
+
+* NoSql - MongoDB
+
+* How to run the test suite
+
+* Deployment instructions
+
+# todo clean - up
+
+Gossip Girl
+
+Growing up, our founders counted &quot;Gossip Girl&quot; among their all time favourite TV shows. As
+
+a tribute to the show we have decided to build a Gossip Girl service internally. The service
+
+tracks changes made in a database and notifies subscribers in real-time to changes they are
+
+interested in. For instance, Blair only wants to track changes made to Chuck&#39;s whereabouts
+
+while Georgina wants to track everything about everyone.
+
+Unfortunately, our developers are busy working on a deus ex machina and since shutting
+
+themselves in a room a few weeks ago, have refused to come out. We can&#39;t wait for them
+
+any longer and this is where you come in. We&#39;d like you to design and build a notification
+
+system that will allow a HTTP client to subscribe to changes in a MongoDB database in real-
+
+time.
+
+With so many of our developers currently unavailable and the last signs of life from that room
+
+being sounds of laughter tainted with madness, we are also looking to hire! To increase your
+
+chances and to show off your mad skills also allow notifications to be subscribed to at the
+
+field level.
+
+To summarize your task
+
+1. Build a notification system to notify subscribers of changes made in a mongodb database
+
+in real-time
+
+2. (For brownie points) Allow subscriptions at the field level of a document.
+
+If, you are not familiar with MongoDB replace MongoDB with a DB of your choice.
+
+Additional Requirements
+
+1. Write Up
+
+Please include a small write-up explaining how you arrived at the final solution, the various
+
+walks on the internet that this task took you on. Details about the various algorithms/tools
+
+you considered, resaons for discarding them, why you picked the algorithm/tool finally used
+
+etc.
+
+2. Usage Manual
+
+As with any piece of software you must include a manual which will list out
+
+the steps needed to use your code. This manual must include dev requirements,
+
+install requirements etc.
+
+Evaluation Criteria
+
+1. Code Quality
+
+Please write the code in a professional manner. We will judge you by the
+
+quality of the code, including comments and tests. **Code readablity is very
+
+important**.
+
+2. References
+
+You are free to use any resources you see fit - friends, text books, the
+
+internet, etc. In fact, we encourage this! Please do mention these sources
+
+used, if any, in your writeup.
