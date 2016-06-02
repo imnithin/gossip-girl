@@ -11,14 +11,14 @@ Real Time Notifications using faye in Rails.
 * bundle exec rake db:create
 * rails s and bundle exec rackup private_pub.ru -s thin -E production.
 
-*Deployment*(How I went about)
+== Deployment(How I went about)
   
 *AWS*
   
 Got aws free(basic) instance 14.04 64bit 
 RoR Set-up https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm
 
-*Latest GIT -V*
+*Latest GIT --version*
 
   sudo apt-add-repository ppa:git-core/ppa
   sudo apt-get update
