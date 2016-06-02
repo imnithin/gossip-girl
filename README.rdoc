@@ -40,4 +40,6 @@ Set-Up:
   run in background
   RAILS_ENV=production bundle exec rackup private_pub.ru -s thin -E production &
 
-  ps -aux | grep rack & kill it to stop
+  ps -aux | grep rack & kill it to stop  or use foreman or http://stackoverflow.com/a/6431006/2231236
+
+  http://52.35.188.34/
