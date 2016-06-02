@@ -38,5 +38,13 @@ RoR Set-up https://www.digitalocean.com/community/tutorials/how-to-install-ruby-
 
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-passenger-and-apache-on-ubuntu-14-04<br/>
     `sudo chown ubuntu: /etc/apt/sources.list.d/passenger.list`
+    
+**Configure Faye**
 
+https://github.com/imnithin/faye-server
+    
+----
 
+Note:
+
+#### Sign up and add a Post, use an other tab to check if the new post in real time has reflected in the post listing page.
