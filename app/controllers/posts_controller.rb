@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
-        publish_changes
+        publish_create_changes
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -41,6 +41,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      @post.assign_attributes(post_params)
+      publish_update_changes
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
@@ -72,8 +74,12 @@ class PostsController < ApplicationController
       params.require(:post).permit(:name, :description)
     end
 
-    def publish_changes
-      PrivatePub.publish_to("/posts", post: @post)
+    def publish_create_changes
+      PrivatePub.publish_to("/posts", post: @post.attributes.merge(user_email: @post.user.email, method: "create")) # append post related user mail
+    end
+
+    def publish_update_changes
+      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id))
     end
 
 end
