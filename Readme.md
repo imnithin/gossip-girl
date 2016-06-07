@@ -42,13 +42,22 @@ https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-
 **Configure Faye**
 
 https://github.com/imnithin/faye-server
-    
+
+**cap production deploy**
+
+if you have access to pem keys.
+
+
+**Apache log**
+	`tail -f /var/log/apache2/access.log`
+
 ----
 
 Note:
 
 #### Sign up and add a Post, use an other tab to check if the new post in real time has reflected in the post listing page.
 
+###### Most source code is included in reppo
 
-**Apache log**
-	`tail -f /var/log/apache2/access.log`
+#### Sign up and add a Post, use an other tab to check if the new post in real time has reflected in the post listing page. Also same changes are appplied when you edit any field.
+
