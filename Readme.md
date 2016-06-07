@@ -48,3 +48,7 @@ https://github.com/imnithin/faye-server
 Note:
 
 #### Sign up and add a Post, use an other tab to check if the new post in real time has reflected in the post listing page.
+
+
+**Apache log**
+	`tail -f /var/log/apache2/access.log`
