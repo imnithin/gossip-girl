@@ -71,15 +71,15 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :description)
+      params.require(:post).permit(:title, :description)
     end
 
     def publish_create_changes
-      PrivatePub.publish_to("/posts", post: @post.attributes.merge(user_email: @post.user.email, method: "create")) rescue nil # append post related user mail
+      PrivatePub.publish_to("/posts", { post: @post.attributes.merge(user_email: @post.user.email, method: "create"), insert_record: render_to_string(partial: "posts/post", locals: { post: @post } )}) rescue nil # append post related user mail
     end
 
     def publish_update_changes
-      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id)) rescue nil
+      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id)) if @post.persisted? rescue nil
     end
 
 end
