@@ -49,6 +49,7 @@ if you have access to pem keys.
 
 
 **Apache log**
+
 	`tail -f /var/log/apache2/access.log`
 
 ----

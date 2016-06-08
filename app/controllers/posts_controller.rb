@@ -75,11 +75,11 @@ class PostsController < ApplicationController
     end
 
     def publish_create_changes
-      PrivatePub.publish_to("/posts", post: @post.attributes.merge(user_email: @post.user.email, method: "create")) # append post related user mail
+      PrivatePub.publish_to("/posts", post: @post.attributes.merge(user_email: @post.user.email, method: "create")) rescue nil # append post related user mail
     end
 
     def publish_update_changes
-      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id))
+      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id)) rescue nil
     end
 
 end
