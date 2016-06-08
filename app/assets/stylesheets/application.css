@@ -14,7 +14,7 @@
  *= require_self
  */
 
-  #notification{
-      float: right;
-      padding-right: 10%;
-  }
+#notification {
+    float: right;
+    padding-right: 10%;
+}

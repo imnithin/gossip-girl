@@ -64,22 +64,22 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :description)
+  end
 
-    def publish_create_changes
-      PrivatePub.publish_to("/posts", { post: @post.attributes.merge(user_email: @post.user.email, method: "create"), insert_record: render_to_string(partial: "posts/post", locals: { post: @post } )}) rescue nil # append post related user mail
-    end
+  def publish_create_changes
+    PrivatePub.publish_to("/posts", {post: @post.attributes.merge(user_email: @post.user.email, method: "create"), insert_record: render_to_string(partial: "posts/post", locals: {post: @post})}) rescue nil # append post related user mail
+  end
 
-    def publish_update_changes
-      PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id)) if @post.persisted? rescue nil
-    end
+  def publish_update_changes
+    PrivatePub.publish_to("/posts", post: @post.changes.merge(id: @post._id)) if @post.persisted? rescue nil
+  end
 
 end
